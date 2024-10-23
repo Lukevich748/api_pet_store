@@ -1,10 +1,9 @@
-from idlelib.configdialog import is_int
-
 import allure
 import pytest
 from allure_commons.types import Severity
 from config.base_test import BaseTest
 from faker import Faker
+
 fake = Faker()
 
 
@@ -34,7 +33,7 @@ class TestCharacter(BaseTest):
     def test_get_all_characters(self, params, expected_result):
         self.api_character.get_all_characters(params, expected_result)
 
-    @pytest.mark.smokes
+    @pytest.mark.smoke
     @allure.severity(Severity.NORMAL)
     @allure.feature("Character info")
     @allure.story("Get One Character By ID")
